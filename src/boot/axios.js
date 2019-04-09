@@ -15,28 +15,28 @@ const config = {
 
 const axiosInstance = axios.create(config);
 
-axiosInstance.interceptors.request.use(
-  (cfg) => {
-    // Do something before request is sent
-    return cfg;
-  },
-  (error) => {
-    // Do something with request error
-    return Promise.reject(error);
-  },
-);
+// axiosInstance.interceptors.request.use(
+//   (cfg) => {
+//     // Do something before request is sent
+//     return cfg;
+//   },
+//   (error) => {
+//     // Do something with request error
+//     return Promise.reject(error);
+//   },
+// );
 
 // Add a response interceptor
-axiosInstance.interceptors.response.use(
-  (response) => {
-    // Do something with response data
-    return response;
-  },
-  (error) => {
-    // Do something with response error
-    return Promise.reject(error);
-  },
-);
+// axiosInstance.interceptors.response.use(
+//   (response) => {
+//     // Do something with response data
+//     return response;
+//   },
+//   (error) => {
+//     // Do something with response error
+//     return Promise.reject(error);
+//   },
+// );
 
 const axiosCreateObservable = payload => new Observable((observer) => {
   const source = axios.CancelToken.source();
