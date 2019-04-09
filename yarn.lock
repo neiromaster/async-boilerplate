@@ -8218,7 +8218,7 @@ rx-lite@*, rx-lite@^4.0.8:
   resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-4.0.8.tgz#0b1e11af8bc44836f04a6407e92da42467b79444"
   integrity sha1-Cx4Rr4vESDbwSmQH6S2kJGe3lEQ=
 
-rxjs@^6.4.0:
+rxjs@^6.3.3, rxjs@^6.4.0:
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.4.0.tgz#f3bb0fe7bda7fb69deac0c16f17b50b0b8790504"
   integrity sha512-Z9Yfa11F6B9Sg/BK9MnqnQ+aQYicPLtilXBp2yUtDt2JRCE0h26d33EnfO3ZxoNxG0T92OUucP3Ct7cpfkdFfw==
@@ -9460,6 +9460,11 @@ vue-cli-plugin-axios@^0.0.4:
   resolved "https://registry.yarnpkg.com/vue-cli-plugin-axios/-/vue-cli-plugin-axios-0.0.4.tgz#29d4eb48275c7fe15b92e1fd5d95fbe2a966436f"
   integrity sha512-p2b/fvPJuPBnvU8027PAAuU5DiOzUn2lku8XLG/f6c8FU0N+/MXWZAlOuHhqd9e7+KIZitwe/c8qlmv7TglbTg==
 
+vue-cli-plugin-rx@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/vue-cli-plugin-rx/-/vue-cli-plugin-rx-0.1.5.tgz#259e3fb430047364e3f433411f0287d184d4d5fa"
+  integrity sha512-8+USiWsELzv0qAQJ7p0V/jqseOq9wZDKWShAESI6UhvYByNGtitwPwK7nrWWDVhSSzGeIER3tj8e+uzoaOQb8Q==
+
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-2.0.3.tgz#c268c96c6d94cfe3d938a5f7593959b0ca3360d1"
@@ -9520,6 +9525,11 @@ vue-router@^3.0.1:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.0.3.tgz#370ca607475c45a1cfab2d9d2ac846feab1c534c"
   integrity sha512-62rB6GjJuyklnLL+yKST469yCYj93SXEn8rpYjxgLwv0aH/Fd6OApD8Hgi9RlraZ1OOwv3jPQvZTtf1GixYW+g==
+
+vue-rx@^6.0.1:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/vue-rx/-/vue-rx-6.1.0.tgz#75c378ef7d58195344b9bf95379d61497c9863ae"
+  integrity sha512-2nfkmmoZ1C4hBZ6eC1c2vvLzc3DextyNpXIDLQcPfcSHyarQCClyEO5y5Pr/P7MDzT5mrRzfunlLQaH3/lQoXA==
 
 vue-style-loader@^4.1.0:
   version "4.1.2"

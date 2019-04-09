@@ -4,6 +4,9 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import './registerServiceWorker';
+import VueRx from 'vue-rx';
+
+Vue.use(VueRx);
 
 Vue.config.productionTip = false;
 
