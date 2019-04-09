@@ -15,6 +15,7 @@ import {
   map,
   startWith,
 } from 'rxjs/operators';
+
 export default {
   domStreams: ['count$'],
   subscriptions() {

@@ -2,6 +2,7 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
   productionSourceMap: false,
+
   configureWebpack: {
     // optimization: {
     //   splitChunks: {
@@ -21,4 +22,14 @@ module.exports = {
     // },
     plugins: [new BundleAnalyzerPlugin()],
   },
+
+  pluginOptions: {
+    quasar: {
+      treeShake: true,
+    },
+  },
+
+  transpileDependencies: [
+    /[\\\/]node_modules[\\\/]quasar[\\\/]/,
+  ],
 };
