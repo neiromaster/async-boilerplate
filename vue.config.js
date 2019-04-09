@@ -7,20 +7,22 @@ module.exports = {
     optimization: {
       splitChunks: {
         cacheGroups: {
+          default: false,
           vue: {
             test: /[\\/]node_modules[\\/](vue|vue-router|vuex)[\\/]/,
             name: 'vue',
             chunks: 'all',
           },
-          // quasar: {
-          //   test: /[\\/]node_modules[\\/](quasar)[\\/]/,
-          //   name: 'quasar',
+          quasar: {
+            test: /[\\/]node_modules[\\/](quasar)[\\/]/,
+            name: 'quasar',
+            chunks: 'all',
+          },
+          // axios: {
+          //   test: /[\\/]node_modules[\\/](axios)[\\/]/,
+          //   name: 'axios',
           //   chunks: 'all',
-          // },
-          // core: {
-          //   test: /[\\/]node_modules[\\/](core-js)[\\/]/,
-          //   name: 'core',
-          //   chunks: 'all',
+          //   // reuseExistingChunk: true,
           // },
         },
       },
