@@ -7,6 +7,7 @@ import store from './store';
 import './registerServiceWorker';
 
 import * as bootFuncs from './boot';
+import i18n from './i18n'
 
 Vue.config.productionTip = false;
 
