@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import RxExample from '../components/RxExample.vue';
+import RxExample from '@/components/RxExample.vue';
 
 export default {
   name: 'PageAbout',

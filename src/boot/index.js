@@ -1,5 +1,13 @@
 import axios from './axios';
 import quasar from './quasar';
 import vueRx from './vue-rx';
+// import i18n from './i18n';
+// import * as hooks from './hooks';
 
-export { quasar, axios, vueRx };
+export default [
+  quasar,
+  axios,
+  vueRx,
+  // i18n,
+  // hooks,
+];

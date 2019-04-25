@@ -6,14 +6,15 @@ import store from './store';
 
 import './registerServiceWorker';
 
-import * as bootFuncs from './boot';
-import i18n from './i18n'
+import bootFuncs from './boot';
+import i18n from './i18n';
 
 Vue.config.productionTip = false;
 
 const app = {
   router,
   store,
+  i18n,
   render: h => h(App),
 };
 
@@ -24,7 +25,7 @@ const context = {
   Vue,
 };
 
-Object.values(bootFuncs)
+bootFuncs
   .forEach(boot => boot(context));
 
 new Vue(app).$mount('#app');
