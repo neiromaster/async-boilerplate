@@ -1,10 +1,14 @@
 <template xmlns:v-stream="http://www.w3.org/1999/xhtml">
-    <section>
-        <h1>Click on 'Count' button to count your clicks</h1>
-        <button v-stream:click="count$">Count clicks</button>
-        <button @click="clearCounter">Clear counter</button>
-        <p>{{result$}}</p>
-    </section>
+  <section>
+    <h1>Click on 'Count' button to count your clicks {{ $t('message') }}</h1>
+    <button v-stream:click="count$">
+      Count clicks
+    </button>
+    <button @click="clearCounter">
+      Clear counter
+    </button>
+    <p>{{ result$ }}</p>
+  </section>
 </template>
 
 <script>

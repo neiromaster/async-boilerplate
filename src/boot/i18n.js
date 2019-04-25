@@ -1,17 +1,17 @@
 /* eslint-disable no-param-reassign */
 import VueI18n from 'vue-i18n';
-import messages from '@/locales/ru.json';
+import ru from '@/locales/ru.json';
 
 export default ({ app, Vue }) => {
   Vue.use(VueI18n);
   app.i18n = new VueI18n({
     locale: 'ru', // set locale
     fallbackLocale: 'ru',
-    messages, // set locale messages
+    messages: { ru }, // set locale messages
   });
 };
 
-const loadedLanguages = ['en']; // our default language that is preloaded
+const loadedLanguages = ['ru']; // our default language that is preloaded
 
 function setI18nLanguage(Vue, lang) {
   Vue.i18n.locale = lang;
