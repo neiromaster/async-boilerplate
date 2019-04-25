@@ -1,9 +1,9 @@
 import beforeEach from './beforeEach';
 
-export default ctx => Object.entries({
-  beforeEach,
-})
-  .reduce((res, [k, v]) => {
-    res[k] = v(ctx);
+const hooks = { beforeEach };
+
+export default ctx => Object.keys(hooks)
+  .reduce((res, k) => {
+    res[k] = hooks[k](ctx);
     return res;
   }, {});

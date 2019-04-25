@@ -6,7 +6,7 @@ module.exports = {
 
   configureWebpack: config => {
     cacheGroupsConfig(config);
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV === 'production' && process.env.VUE_CLI_MODERN_BUILD) {
       config.plugins.push(new BundleAnalyzerPlugin());
     }
   },
