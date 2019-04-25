@@ -2,16 +2,19 @@
 import VueI18n from 'vue-i18n';
 import ru from '@/locales/ru.json';
 
+const defaultLocale = 'ru';
+
 export default ({ app, Vue }) => {
   Vue.use(VueI18n);
   app.i18n = new VueI18n({
-    locale: 'ru', // set locale
-    fallbackLocale: 'ru',
+    locale: defaultLocale, // set locale
+    fallbackLocale: defaultLocale,
     messages: { ru }, // set locale messages
   });
 };
 
-const loadedLanguages = ['ru']; // our default language that is preloaded
+const loadedLanguages = [defaultLocale]; // our default language that is preloaded
+const availableLanguages = ['ru', 'en']; // our default language that is preloaded
 
 function setI18nLanguage(Vue, lang) {
   Vue.i18n.locale = lang;
@@ -35,22 +38,24 @@ export function loadLanguageAsync(Vue, lang) {
   return Promise.resolve(lang);
 }
 
-// function loadLocaleMessages() {
-//   const locales = require.context('./locales', true, /[A-Za-z0-9-_,\s]+\.json$/i);
-//   const messages = {};
-//   locales.keys()
-//     .forEach(key => {
-//       const matched = key.match(/([A-Za-z0-9-_]+)\./i);
-//       if (matched && matched.length > 1) {
-//         const locale = matched[1];
-//         messages[locale] = locales(key);
-//       }
-//     });
-//   return messages;
-// }
-//
-// export default new VueI18n({
-//   locale: process.env.VUE_APP_I18N_LOCALE || 'en',
-//   fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || 'en',
-//   messages: loadLocaleMessages(),
-// });
+export function i18nRouterInit(routes) {
+  return [
+    {
+      path: '/',
+      redirect: `/${defaultLocale}`,
+    },
+    {
+      path: `/(${availableLanguages.join('|')})`,
+      component: {
+        render(h) {
+          return h('router-view');
+        },
+      },
+      children: routes,
+    },
+    {
+      path: '/(.*)',
+      redirect: to => `/${defaultLocale}${to.path}`,
+    },
+  ];
+}
