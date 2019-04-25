@@ -13,14 +13,14 @@ module.exports = {
 
   pluginOptions: {
     quasar: {
-      treeShake: true
+      treeShake: true,
     },
     i18n: {
       locale: 'ru',
       fallbackLocale: 'en',
       localeDir: 'locales',
-      enableInSFC: true
-    }
+      enableInSFC: true,
+    },
   },
 
   transpileDependencies: [
