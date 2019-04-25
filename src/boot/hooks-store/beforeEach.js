@@ -1,7 +1,7 @@
 import { loadLanguageAsync } from '@/boot/i18n';
 
-export default (to, from, next) => {
+export default ({ Vue }) => (to, from, next) => {
   const { lang } = to.params;
-  loadLanguageAsync(lang)
+  loadLanguageAsync(Vue, lang)
     .then(() => next());
 };
