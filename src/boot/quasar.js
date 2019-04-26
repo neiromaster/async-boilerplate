@@ -20,7 +20,7 @@ import {
 import '@quasar/extras/roboto-font/roboto-font.css';
 import 'quasar/dist/quasar.ie.polyfills';
 
-import(/* webpackPreload: true */'../styles/quasar.styl');
+import(/* webpackPreload: true, webpackChunkName: "quasar" */'../styles/quasar.styl');
 
 export default ({ Vue }) => {
   Vue.use(Quasar, {
