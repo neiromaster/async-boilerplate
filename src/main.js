@@ -7,14 +7,12 @@ import store from './store';
 import './registerServiceWorker';
 
 import bootFuncs from './boot';
-// import i18n from './i18n';
 
 Vue.config.productionTip = false;
 
 const app = {
   router,
   store,
-  // i18n,
   render: h => h(App),
 };
 
