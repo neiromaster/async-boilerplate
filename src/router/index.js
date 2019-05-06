@@ -24,6 +24,9 @@ const routes = [
   },
 ];
 
-export default new Router({
-  routes: i18nRouterInit(routes),
-});
+// eslint-disable-next-line import/prefer-default-export
+export function createRouter() {
+  return new Router({
+    routes: i18nRouterInit(routes),
+  });
+}

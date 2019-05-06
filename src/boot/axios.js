@@ -55,22 +55,24 @@ const axiosCreateObservable = payload => new Observable((observer) => {
 });
 
 /* eslint-disable-next-line no-unused-vars */
-Plugin.install = (Vue, options) => {
-  /* eslint-disable-next-line no-param-reassign */
-  Vue.axios = axiosInstance;
-  window.axios = axiosInstance;
-  Object.defineProperties(Vue.prototype, {
-    $axios: {
-      get() {
-        return axiosInstance;
+const Plugin = {
+  install: (Vue, options) => {
+    /* eslint-disable-next-line no-param-reassign */
+    Vue.axios = axiosInstance;
+    window.axios = axiosInstance;
+    Object.defineProperties(Vue.prototype, {
+      $axios: {
+        get() {
+          return axiosInstance;
+        },
       },
-    },
-    $axios$: {
-      get() {
-        return axiosCreateObservable;
+      $axios$: {
+        get() {
+          return axiosCreateObservable;
+        },
       },
-    },
-  });
+    });
+  },
 };
 
 export default ({ Vue }) => {
