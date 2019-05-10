@@ -54,8 +54,8 @@ const axiosCreateObservable = payload => new Observable((observer) => {
   return source.cancel;
 });
 
-/* eslint-disable-next-line no-unused-vars */
 const Plugin = {
+  /* eslint-disable-next-line no-unused-vars */
   install: (Vue, options) => {
     /* eslint-disable-next-line no-param-reassign */
     Vue.axios = axiosInstance;
