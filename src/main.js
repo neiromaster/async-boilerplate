@@ -2,7 +2,7 @@ import Vue from 'vue';
 // import './plugins/axios';
 import App from './App.vue';
 import { createRouter } from './router';
-import { createStore } from './store';
+// import { createStore } from './store';
 
 import './registerServiceWorker';
 
@@ -11,18 +11,18 @@ import bootFuncs from './boot';
 Vue.config.productionTip = false;
 
 const router = createRouter();
-const store = createStore();
+// const store = createStore();
 
 const app = {
   router,
-  store,
+  // store,
   render: h => h(App),
 };
 
 const context = {
   app,
   router,
-  store,
+  // store,
   Vue,
 };
 
