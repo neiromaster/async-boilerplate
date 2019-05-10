@@ -3,11 +3,8 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
-// eslint-disable-next-line import/prefer-default-export
-export function createStore() {
-  return new Vuex.Store({
-    state: () => ({}),
-    mutations: {},
-    actions: {},
-  });
-}
+export default new Vuex.Store({
+  state: {},
+  mutations: {},
+  actions: {},
+});
