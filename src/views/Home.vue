@@ -1,5 +1,8 @@
 <template>
   <q-page class="flex flex-center">
+    <router-link :to="{name: 'about'}">
+      about
+    </router-link>
     <img alt="Quasar logo" src="../assets/logo.png">
     <rx-example></rx-example>
   </q-page>
