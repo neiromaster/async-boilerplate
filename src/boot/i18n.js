@@ -2,22 +2,25 @@
 import VueI18n from 'vue-i18n';
 import ru from '@/locales/ru.json';
 
-const defaultLocale = 'ru';
+export const availableLanguages = ['ru', 'en']; // our default language that is preloaded
+export const defaultLocale = 'ru';
+
+const loadedLanguages = [defaultLocale]; // our default language that is preloaded
+
+let i18n;
 
 export default ({ app, Vue }) => {
   Vue.use(VueI18n);
-  app.i18n = new VueI18n({
+  i18n = new VueI18n({
     locale: defaultLocale, // set locale
     fallbackLocale: defaultLocale,
     messages: { ru }, // set locale messages
   });
+  app.i18n = i18n;
 };
 
-const loadedLanguages = [defaultLocale]; // our default language that is preloaded
-const availableLanguages = ['ru', 'en']; // our default language that is preloaded
-
 function setI18nLanguage(Vue, lang) {
-  Vue.i18n.locale = lang;
+  i18n.locale = lang;
   Vue.axios.defaults.headers.common['Accept-Language'] = lang;
   document.querySelector('html')
     .setAttribute('lang', lang);
@@ -25,10 +28,10 @@ function setI18nLanguage(Vue, lang) {
 }
 
 export function loadLanguageAsync(Vue, lang) {
-  if (Vue.i18n.locale !== lang) {
+  if (i18n.locale !== lang) {
     if (!loadedLanguages.includes(lang)) {
       return import(/* webpackChunkName: "lang-[request]" */ `@/locales/${lang}`).then((msgs) => {
-        Vue.i18n.setLocaleMessage(lang, msgs.default);
+        i18n.setLocaleMessage(lang, msgs.default);
         loadedLanguages.push(lang);
         return setI18nLanguage(Vue, lang);
       });
@@ -45,7 +48,7 @@ export function i18nRouterInit(routes) {
       redirect: `/${defaultLocale}`,
     },
     {
-      path: `/(${availableLanguages.join('|')})`,
+      path: '/:lang',
       component: {
         render(h) {
           return h('router-view');
@@ -55,7 +58,16 @@ export function i18nRouterInit(routes) {
     },
     {
       path: '/(.*)',
-      redirect: to => `/${defaultLocale}${to.path}`,
+      redirect: to => `${defaultLocale}${to.path}`,
+    },
+    {
+      path: '/404',
+      name: 'error404',
+      component: {
+        render(h) {
+          return h('p', '404');
+        },
+      },
     },
   ];
 }
