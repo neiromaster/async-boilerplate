@@ -14,10 +14,13 @@ import {
   QItem,
   QItemSection,
   QItemLabel,
+  QForm,
+  QField,
+  QSelect,
   Notify,
 } from 'quasar';
 
-import '@quasar/extras/roboto-font/roboto-font.css';
+// import '@quasar/extras/roboto-font/roboto-font.css';
 import '@quasar/extras/material-icons/material-icons.css';
 import 'quasar/dist/quasar.ie.polyfills';
 
@@ -40,6 +43,9 @@ export default ({ Vue }) => {
       QItem,
       QItemSection,
       QItemLabel,
+      QForm,
+      QField,
+      QSelect,
     },
     directives: {},
     plugins: {
