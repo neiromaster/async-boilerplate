@@ -39,13 +39,3 @@ export default {
   },
 };
 </script>
-
-<style>
-button {
-  padding: 10px;
-  font-size: 14px;
-  margin-right: 10px;
-  border-radius: 4px;
-  outline: none;
-}
-</style>
