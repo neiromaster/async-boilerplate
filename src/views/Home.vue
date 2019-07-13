@@ -3,8 +3,11 @@
     <router-link :to="{name: 'about'}">
       about
     </router-link>
-    <img alt="Quasar logo" src="../assets/logo.png">
-    <rx-example></rx-example>
+    <img
+      alt="Quasar logo"
+      src="../assets/logo.png"
+    >
+    <rx-example />
   </q-page>
 </template>
 

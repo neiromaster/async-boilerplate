@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <p>This is an about page</p>
+    <p>{{ $t('message') }}</p>
     <router-link :to="{name: 'home'}">
       home
     </router-link>
