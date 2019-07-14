@@ -1,11 +1,19 @@
-import { loadLanguageAsync, availableLanguages, defaultLocale } from '@/boot/i18n';
+import i18nMiddleware from '@/router/middlewares/i18nMiddleware';
+import middlewarePipeline from './middlewarePipeline';
 
 export default ({ Vue }) => (to, from, next) => {
-  const { lang } = to.params;
-  if (availableLanguages.includes(lang)) {
-    loadLanguageAsync(Vue, lang)
-      .then(() => next());
-  } else {
-    next({ path: `/${defaultLocale}${to.path}` });
-  }
+  const middleware = Array.isArray(to.meta.middleware)
+    ? [i18nMiddleware, ...to.meta.middleware]
+    : [i18nMiddleware, to.meta.middleware];
+
+  const context = {
+    Vue,
+    to,
+    from,
+    next,
+  };
+  return middleware[0]({
+    ...context,
+    next: middlewarePipeline(context, middleware, 1),
+  });
 };
