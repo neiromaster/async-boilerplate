@@ -1,5 +1,3 @@
-import VueRx from 'vue-rx';
-
 export default ({ Vue }) => {
-  Vue.use(VueRx);
+  import('vue-rx').then(({ default: VueRx }) => Vue.use(VueRx));
 };
