@@ -5,6 +5,10 @@ import { i18nRouterInit } from '@/boot/i18n';
 
 Vue.use(Router);
 
+function lazyLoad(view) {
+  return () => import(/* webpackChunkName: "[request]" */ `@/views/${view}.vue`);
+}
+
 const routes = [
   {
     path: '',
@@ -13,12 +17,12 @@ const routes = [
       {
         path: '',
         name: 'home',
-        component: () => import(/* webpackChunkName: "Home" */ '../views/Home.vue'),
+        component: lazyLoad('Home'),
       },
       {
         path: 'about',
         name: 'about',
-        component: () => import(/* webpackChunkName: "About" */ '../views/About.vue'),
+        component: lazyLoad('About'),
       },
     ],
   },
