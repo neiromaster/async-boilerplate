@@ -57,10 +57,6 @@ export function i18nRouterInit(routes) {
       children: routes,
     },
     {
-      path: '/(.*)',
-      redirect: to => `${defaultLocale}${to.path}`,
-    },
-    {
       path: '/404',
       name: 'error404',
       component: {

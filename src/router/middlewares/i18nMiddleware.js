@@ -6,6 +6,6 @@ export default ({ Vue, to, next }) => {
     loadLanguageAsync(Vue, lang)
       .then(() => next());
   } else {
-    next({ path: `/${defaultLocale}${to.path}` });
+    next({ path: `/${defaultLocale}${to.path}`, replace: true });
   }
 };
