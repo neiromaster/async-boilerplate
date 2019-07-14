@@ -1,31 +1,13 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import DefaultLayout from '@/layouts/Default.vue';
 import { i18nRouterInit } from '@/boot/i18n';
+
+import defaultLayout from './defaultLayout';
 
 Vue.use(Router);
 
-function lazyLoad(view) {
-  return () => import(/* webpackChunkName: "[request]" */ `@/views/${view}.vue`);
-}
-
 const routes = [
-  {
-    path: '',
-    component: DefaultLayout,
-    children: [
-      {
-        path: '',
-        name: 'home',
-        component: lazyLoad('Home'),
-      },
-      {
-        path: 'about',
-        name: 'about',
-        component: lazyLoad('About'),
-      },
-    ],
-  },
+  defaultLayout,
   {
     path: '*',
     redirect: { name: 'error404' },
