@@ -9629,10 +9629,10 @@ quasar-app-extension-ide-helper@^0.0.5:
     fs-extra "^7.0.1"
     xml-escape "^1.1.0"
 
-quasar@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/quasar/-/quasar-1.0.4.tgz#b5e5aa2aa113a797729ed85728e88a4ebc5f1e0b"
-  integrity sha512-/9ZOGOl29jy1jNG/IUjwM57y0XKamgc0N/440QBSfHSHnnusGSaIkdtCZ363EUUXvELIO7tHi/yiln0q7P2X1g==
+quasar@^2.32.2:
+  version "2.32.2"
+  resolved "https://registry.yarnpkg.com/quasar/-/quasar-2.32.2.tgz#4db7a74bca5143c83c493a93b0bd184867fbc12d"
+  integrity sha512-IqQHHYoYL8bfFDAwy5E5X1xv7VpMAdhFHjSaLycueRdLOkXMbntUUphAIof8Q/wgvKQcskYflGV9/OyIPvbkLA==
 
 query-string@^4.1.0:
   version "4.3.4"
